@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Запропонувати місто</title>
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background-color: #fdfdfd; color: #111; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        header, footer { border-bottom: 2px solid #111; padding-bottom: 15px; margin-bottom: 25px; }
+        footer { border-top: 2px solid #111; border-bottom: none; margin-top: 40px; padding-top: 15px; text-align: center; }
+        a { color: #111; text-decoration: none; font-weight: bold; border-bottom: 1px solid #111; }
+        a:hover { background-color: #111; color: #fff; }
+        nav { margin-bottom: 20px; }
+        
+        /* Стилізація форми */
+        form div { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #111; box-sizing: border-box; font-family: inherit; background: transparent; }
+        input:focus, select:focus, textarea:focus { outline: none; background: #eee; }
+        button { background-color: #111; color: #fff; border: 1px solid #111; padding: 10px 20px; cursor: pointer; font-family: inherit; font-weight: bold; font-size: 16px; transition: 0.2s; }
+        button:hover { background-color: #fff; color: #111; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Запропонувати місто</h1>
+        <nav>
+            <a href="index.html">← Повернутися на головну</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <p>Яке місто, на твою думку, має доповнити цей список? Заповни форму нижче.</p>
+            
+            <form action="#" method="GET">
+                <div>
+                    <label for="userName">Ваше ім'я:</label>
+                    <input type="text" id="userName" name="userName" required>
+                </div>
+
+                <div>
+                    <label for="proposedCity">Назва міста:</label>
+                    <input type="text" id="proposedCity" name="proposedCity" required>
+                </div>
+
+                <div>
+                    <label for="region">Регіон:</label>
+                    <select id="region" name="region">
+                        <option value="west">Західна Україна</option>
+                        <option value="center">Центральна Україна</option>
+                        <option value="east">Східна Україна</option>
+                        <option value="south">Південна Україна</option>
+                        <option value="north">Північна Україна</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="reason">Головна причина відвідати (чому саме воно?):</label>
+                    <textarea id="reason" name="reason" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Надіслати пропозицію</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Вадим Рекунов. Усі права захищено.</p>
+    </footer>
+</body>
+</html>
