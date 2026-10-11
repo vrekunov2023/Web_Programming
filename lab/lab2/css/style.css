@@ -1,1 +1,313 @@
+/* =========================================
+   1. Універсальний селектор та Box Model
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Важлива вимога до карток та всієї сторінки[cite: 1] */
+}
 
+/* =========================================
+   2. Селектори елементів та базові стилі
+   ========================================= */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9fbfc;
+    line-height: 1.6;
+}
+
+/* Групування селекторів[cite: 1] */
+h1, h2, h3 {
+    color: #1a2b4c;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 28px;
+    border-bottom: 2px solid #e0e5eb;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   3. Display: flex (для Header)
+   ========================================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Демонстрація transform: rotate/scale[cite: 1] */
+.sensor-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #1a8b44;
+    margin-right: 15px;
+    border-radius: 5px;
+    transform: rotate(15deg);
+    transition: transform 0.3s ease;
+}
+
+.sensor-icon:hover {
+    transform: scale(1.2) rotate(0deg);
+}
+
+.logo-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0a1f44;
+}
+
+.logo-slogan {
+    font-size: 14px;
+    color: #666;
+}
+
+nav a {
+    margin-left: 20px;
+    font-weight: bold;
+}
+nav a.active, nav a:hover {
+    color: #1a8b44;
+}
+
+/* =========================================
+   4. Hero Section
+   ========================================= */
+#hero {
+    background-color: #eaf1f8;
+    padding: 80px 40px;
+    margin-bottom: 40px;
+}
+
+#hero h1 {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Кнопки та Transitions[cite: 1] */
+.btn-primary {
+    background-color: #1a8b44;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавна зміна кольору[cite: 1] */
+}
+
+.btn-primary:hover {
+    background-color: #126330;
+}
+
+/* =========================================
+   5. Картки (Display: inline-block)
+   ========================================= */
+.cards-wrapper {
+    font-size: 0; /* Видалення пробілів між inline-block */
+    margin-bottom: 30px;
+}
+
+/* Спільний клас для карток з inline-block[cite: 1] */
+.card {
+    display: inline-block;
+    width: calc(25% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e5eb;
+    border-radius: 8px;
+    vertical-align: top;
+    font-size: 16px; 
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-label {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.status-badge.normal {
+    display: inline-block;
+    background-color: #e6f4ea;
+    color: #1a8b44;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* =========================================
+   6. Попередження (Positioning & Specificity)
+   ========================================= */
+.warning-box {
+    position: relative; /* Relative для батьківського блоку[cite: 1] */
+    background-color: #fde8e8;
+    border: 1px solid #f9bcbc;
+    padding: 20px 20px 20px 50px;
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+.warning-badge {
+    position: absolute; /* Absolute для позначки[cite: 1] */
+    top: 20px;
+    left: 15px;
+    background-color: #e02424;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.warning-title {
+    color: #c81e1e;
+    margin-bottom: 5px;
+}
+
+/* Конфлікт CSS та Specificity (Специфічність)[cite: 1] */
+/* Клас задає сірий колір (вага 0,1,0) */
+.conflict-text {
+    color: #666; 
+}
+/* ID перебиває клас, задаючи червоний колір (вага 1,0,0)[cite: 1] */
+#specific-text {
+    color: #333; 
+}
+
+/* =========================================
+   7. Таблиця вимірювань
+   ========================================= */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #fff;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #e0e5eb;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f1f5f9;
+}
+
+.danger-text { color: #e02424; font-weight: bold; }
+.success-text { color: #1a8b44; }
+
+/* =========================================
+   8. Форма та Селектор Атрибута
+   ========================================= */
+.form-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e0e5eb;
+    margin-bottom: 60px;
+}
+
+.order-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.required {
+    color: red;
+}
+
+/* Селектор атрибута[cite: 1] */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* =========================================
+   9. Footer
+   ========================================= */
+footer {
+    background-color: #1a2b4c;
+    color: #fff;
+    padding: 40px 0 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2e446d;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-nav a {
+    color: #a0aec0;
+    margin-left: 20px;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+}
+
+.copyright {
+    color: #a0aec0;
+    font-size: 14px;
+}
