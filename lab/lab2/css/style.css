@@ -82,7 +82,7 @@ main {
     background-color: #ffffff;
     background-image: 
         linear-gradient(to right, #ffffff 45%, rgba(255, 255, 255, 0.7) 65%, rgba(255, 255, 255, 0) 100%),
-        url('../image/image.png');
+        url('../images/image.png');
     background-position: right center;
     background-repeat: no-repeat;
     background-size: contain;
