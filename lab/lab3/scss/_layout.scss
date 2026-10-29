@@ -1,0 +1,113 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.container {
+  @include m.container;
+}
+
+.section {
+  margin-top: v.$space-xl;
+}
+
+// ===== Header (Flexbox) =====
+.header {
+  padding: v.$space-lg 0;
+
+  &__inner {
+    @include m.flex-column(v.$space-md);
+
+    @include m.respond-to(v.$bp-tablet) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+// ===== Hero (Grid) =====
+.hero {
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-lg;
+
+    @include m.respond-to(v.$bp-tablet) {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: v.$space-xl;
+    }
+  }
+
+  &__content {
+    @include m.flex-column(v.$space-md);
+    align-items: flex-start;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    border-radius: v.$radius;
+    aspect-ratio: 6 / 5;
+
+    // плавний перехід у білий зліва (як градієнт у попередній роботі)
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, v.$color-white 0%, rgba(255, 255, 255, 0) 30%);
+      pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
+      // збільшення прибирає з кадру логотип, вшитий у зображення
+      transform: scale(1.4);
+      transform-origin: right center;
+    }
+
+    @include m.respond-to(v.$bp-tablet) {
+      aspect-ratio: auto;
+      align-self: stretch;
+      min-height: 320px;
+    }
+  }
+}
+
+// ===== Сітки карток (Grid) =====
+.monitoring-grid {
+  @include m.responsive-grid(2, 5);
+}
+
+.services-grid {
+  @include m.responsive-grid(2, 4);
+}
+
+// ===== Footer (Flexbox) =====
+.footer {
+  margin-top: v.$space-2xl;
+  padding: v.$space-xl 0;
+  color: v.$color-white;
+  background-color: v.$color-footer;
+
+  &__inner {
+    @include m.flex-column(v.$space-lg);
+
+    @include m.respond-to(v.$bp-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__right {
+    @include m.flex-column(v.$space-sm);
+
+    @include m.respond-to(v.$bp-tablet) {
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+}

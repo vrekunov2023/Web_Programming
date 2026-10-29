@@ -1,0 +1,40 @@
+@use "variables" as v;
+
+// Mobile First: стилі застосовуються від зазначеної ширини і вище
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column($gap: v.$space-md) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin container {
+  width: min(100% - #{2 * v.$container-gutter}, #{v.$container-max});
+  margin-inline: auto;
+}
+
+// Адаптивна сітка: 1 колонка -> tablet -> desktop
+@mixin responsive-grid($tablet-cols, $desktop-cols, $gap: v.$space-md) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $gap;
+
+  @include respond-to(v.$bp-tablet) {
+    grid-template-columns: repeat($tablet-cols, 1fr);
+  }
+
+  @include respond-to(v.$bp-desktop) {
+    grid-template-columns: repeat($desktop-cols, 1fr);
+  }
+}
