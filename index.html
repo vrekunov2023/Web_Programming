@@ -305,6 +305,13 @@ const word = 'ЗВІТИ';
 });
 
 const grid = document.getElementById('grid');
+// відкриває посилання в новій вкладці (плейсхолдери "#" не чіпає)
+function openInNewTab(link) {
+  if (link.getAttribute('href') !== '#') {
+    link.target = '_blank';
+    link.rel = 'noopener';
+  }
+}
 labs.forEach((lab, i) => {
   const n = String(i + 1).padStart(2, '0');
 
@@ -331,11 +338,13 @@ labs.forEach((lab, i) => {
   a.className = 'btn';
   a.href = lab.report;
   a.textContent = 'Відкрити звіт';
+  openInNewTab(a);
 
   const b = document.createElement('a');
   b.className = 'btn ghost';
   b.href = lab.page;
   b.textContent = 'Переглянути сторінку';
+  openInNewTab(b);
 
   links.append(a, b);
   tile.append(h2, p, links);
