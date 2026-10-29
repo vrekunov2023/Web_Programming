@@ -26,7 +26,7 @@
 
 Посилання на опубліковану сторінку:
 
-https://vrekunov2023.github.io/lab/lab2/index.html
+[https://vrekunov2023.github.io/lab/lab2/index.html](https://vrekunov2023.github.io/Web_Programming/lab/lab2/index.html)
 
 Скріншот результату:
 <img width="1920" height="730" alt="image" src="https://github.com/user-attachments/assets/8c1db489-1b83-48b2-8f7d-5448a308b1e4" />
