@@ -29,8 +29,10 @@
 [https://vrekunov2023.github.io/lab/lab2/index.html](https://vrekunov2023.github.io/Web_Programming/lab/lab2/index.html)
 
 Скріншот результату:
-<img width="1920" height="730" alt="image" src="https://github.com/user-attachments/assets/8c1db489-1b83-48b2-8f7d-5448a308b1e4" />
-<img width="1920" height="805" alt="image" src="https://github.com/user-attachments/assets/b4d05ff8-3d23-4a14-9428-feed2bfe40d5" />
+<img width="1920" height="980" alt="image" src="https://github.com/user-attachments/assets/84d7a0f2-9114-48ba-a442-f54de0aac541" />
+
+<img width="1920" height="921" alt="image" src="https://github.com/user-attachments/assets/3f7094e4-97e2-4671-81fc-57db53a1d8eb" />
+
 
 ## Висновок
 
