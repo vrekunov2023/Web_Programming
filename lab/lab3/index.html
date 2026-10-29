@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акустична варта</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
 
+    <header class="header">
+        <div class="container header__inner">
+            <div class="logo">
+                <div class="logo__title">Акустична варта</div>
+                <div class="logo__slogan">Тиша сьогодні — Комфорт завтра</div>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav__link nav__link--active">Головна</a>
+                <a href="#" class="nav__link">Моніторинг</a>
+                <a href="#" class="nav__link">Послуги</a>
+                <a href="#" class="nav__link">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <h1 class="hero__title">Професійний акустичний моніторинг</h1>
+                    <p class="hero__text">Вимірюємо рівень шуму. Аналізуємо дані. Допомагаємо створювати тихі та комфортні міста.</p>
+                    <button class="btn" type="button">Замовити дослідження</button>
+                </div>
+                <div class="hero__image">
+                    <img src="assets/images/hero-bg.png" alt="Датчик шуму на опорі на тлі міської забудови">
+                </div>
+            </div>
+        </section>
+
+        <!-- Поточний моніторинг -->
+        <section class="container section">
+            <h2>Поточний моніторинг</h2>
+            <div class="monitoring-grid">
+                <article class="card">
+                    <span class="card__label">Об'єкт</span>
+                    <h3 class="card__title">ЖК «Зелений»</h3>
+                    <p class="card__desc">Київ, вул. Лісова, 12</p>
+                </article>
+                <article class="card">
+                    <span class="card__label">Середній рівень</span>
+                    <h3 class="card__title">54 дБ</h3>
+                    <span class="badge badge--normal">Норма</span>
+                </article>
+                <article class="card">
+                    <span class="card__label">Період вимірювань</span>
+                    <h3 class="card__title">08:00 – 18:00</h3>
+                    <p class="card__desc">Сьогодні</p>
+                </article>
+                <article class="card">
+                    <span class="card__label">Кількість точок</span>
+                    <h3 class="card__title">6</h3>
+                    <p class="card__desc">Активні датчики</p>
+                </article>
+                <article class="card">
+                    <span class="card__label">Статус</span>
+                    <h3 class="card__title">Вимірювання тривають</h3>
+                </article>
+            </div>
+        </section>
+
+        <!-- Напрями роботи -->
+        <section class="container section">
+            <h2>Напрями роботи</h2>
+            <div class="services-grid">
+                <article class="card">
+                    <h3 class="card__title">Житлові комплекси</h3>
+                    <p class="card__desc">Моніторинг шуму у дворах та на прилеглих територіях.</p>
+                </article>
+                <article class="card">
+                    <h3 class="card__title">Офісні центри</h3>
+                    <p class="card__desc">Аналіз акустичного комфорту в робочих зонах.</p>
+                </article>
+                <article class="card">
+                    <h3 class="card__title">Підприємства</h3>
+                    <p class="card__desc">Вимірювання та оцінка виробничого шуму.</p>
+                </article>
+                <article class="card">
+                    <h3 class="card__title">Масові заходи</h3>
+                    <p class="card__desc">Контроль рівня шуму на концертах і фестивалях.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Попередження -->
+        <div class="container">
+            <aside class="warning">
+                <h3 class="warning__title">Увага!</h3>
+                <p class="warning__text">На точці №4 (вул. Центральна) зафіксовано підвищений рівень шуму — 72 дБ. Дані передано на додатковий аналіз.</p>
+            </aside>
+        </div>
+
+        <!-- Останні вимірювання -->
+        <section class="container section">
+            <h2>Останні вимірювання</h2>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Дата і час</th>
+                            <th>Місце</th>
+                            <th>Рівень шуму</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12.11.2024 16:20</td>
+                            <td>Вул. Центральна</td>
+                            <td class="text-red">72 дБ</td>
+                            <td class="text-red">Перевищення</td>
+                        </tr>
+                        <tr>
+                            <td>12.11.2024 13:45</td>
+                            <td>ЖК «Зелений»</td>
+                            <td>54 дБ</td>
+                            <td class="text-green">Норма</td>
+                        </tr>
+                        <tr>
+                            <td>12.11.2024 11:10</td>
+                            <td>Бізнес-центр «Парус»</td>
+                            <td>60 дБ</td>
+                            <td class="text-green">Норма</td>
+                        </tr>
+                        <tr>
+                            <td>11.11.2024 19:30</td>
+                            <td>Міський парк</td>
+                            <td>48 дБ</td>
+                            <td class="text-green">Норма</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Форма замовлення -->
+        <section class="container section">
+            <h2>Замовити дослідження</h2>
+            <p class="form-subtitle">Заповніть форму, і ми зв'яжемося з вами для уточнення деталей.</p>
+
+            <form action="#" class="form">
+                <div class="form__fields">
+                    <div class="form__field">
+                        <label class="form__label" for="name">Ім'я <span class="form__required">*</span></label>
+                        <input type="text" id="name" placeholder="Ваше ім'я" required>
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="email">Email <span class="form__required">*</span></label>
+                        <input type="email" id="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="type">Тип об'єкта <span class="form__required">*</span></label>
+                        <select id="type" required>
+                            <option value="">Оберіть тип</option>
+                            <option>Житловий комплекс</option>
+                            <option>Офісний центр</option>
+                            <option>Підприємство</option>
+                            <option>Масовий захід</option>
+                        </select>
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="period">Бажаний період <span class="form__required">*</span></label>
+                        <input type="text" id="period" placeholder="дд.мм.рррр – дд.мм.рррр" required>
+                    </div>
+                </div>
+                <div class="form__field form__description">
+                    <label class="form__label" for="description">Опис завдання</label>
+                    <textarea id="description" placeholder="Опишіть ваше завдання..."></textarea>
+                </div>
+                <button type="submit" class="btn form__submit">Надіслати заявку</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__left">
+                <div class="footer__title">Акустична варта</div>
+                <div class="footer__slogan">Тиша сьогодні — комфорт завтра</div>
+            </div>
+            <div class="footer__right">
+                <nav class="footer__nav">
+                    <a href="#" class="footer__link">Головна</a>
+                    <a href="#" class="footer__link">Моніторинг</a>
+                    <a href="#" class="footer__link">Послуги</a>
+                    <a href="#" class="footer__link">Контакти</a>
+                </nav>
+                <div class="footer__copyright">© 2024 Акустична варта. Всі права захищені.</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
