@@ -81,7 +81,7 @@ npm run sass     # режим watch
 
 ## 5. Результат
 Посилання на сторінку:
-https://vrekunov2023.github.io/Web_Programming/lab/lab2/index.html
+https://vrekunov2023.github.io/Web_Programming/lab/lab3/index.html
 
 Перевірка на різних ширинах viewport (DevTools / емуляція):
 
