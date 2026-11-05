@@ -1,0 +1,279 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// ===== Логотип і навігація =====
+.logo {
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    color: v.$color-heading;
+  }
+
+  &__slogan {
+    font-size: 13px;
+    color: v.$color-subtle;
+  }
+}
+
+.nav {
+  @include m.flex-column(v.$space-sm);
+  align-items: flex-start;
+
+  &__link {
+    padding-bottom: v.$space-xs;
+    font-size: 15px;
+    color: v.$color-muted;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+
+    &--active {
+      font-weight: bold;
+      color: v.$color-primary;
+      border-bottom-color: v.$color-primary;
+    }
+  }
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: v.$space-sm v.$space-lg;
+  }
+}
+
+// ===== Hero текст =====
+.hero__title {
+  font-size: clamp(1.8rem, 6vw, 2.75rem);
+  line-height: 1.1;
+  color: v.$color-heading;
+}
+
+.hero__text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+// ===== Кнопка =====
+.btn {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: bold;
+  color: v.$color-white;
+  background-color: v.$color-primary;
+  border: none;
+  border-radius: v.$radius-sm;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: v.$color-primary-dark;
+  }
+}
+
+// ===== Картки (Flexbox всередині) =====
+.card {
+  @include m.flex-column(v.$space-xs);
+  align-items: flex-start;
+  padding: 20px;
+  background-color: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+
+  &__label {
+    font-size: 12px;
+    color: v.$color-slate-light;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: v.$color-slate-dark;
+  }
+
+  &__desc {
+    font-size: 13px;
+    color: v.$color-slate;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px v.$space-sm;
+  font-size: 13px;
+  border-radius: v.$radius-sm;
+
+  &--normal {
+    color: v.$color-success-text;
+    background-color: v.$color-success-bg;
+  }
+}
+
+// ===== Попередження =====
+.warning {
+  width: 100%;
+  margin-top: v.$space-xl;
+  padding: 20px;
+  background-color: v.$color-danger-bg;
+  border: 1px solid v.$color-danger-border;
+  border-radius: v.$radius;
+
+  &__title {
+    margin-bottom: v.$space-xs;
+    font-size: 18px;
+    color: v.$color-danger;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: v.$color-danger-text;
+  }
+}
+
+// ===== Таблиця =====
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 12px v.$space-md;
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid v.$color-border;
+  }
+
+  th {
+    color: v.$color-slate;
+    background-color: v.$color-surface;
+  }
+}
+
+.text-red {
+  color: v.$color-danger;
+}
+
+.text-green {
+  color: v.$color-success;
+}
+
+// ===== Форма (Grid) =====
+.form-subtitle {
+  margin: (-(v.$space-sm)) 0 v.$space-lg;
+  font-size: 14px;
+  color: v.$color-slate-light;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+
+  &__fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-md;
+  }
+
+  &__field {
+    @include m.flex-column(v.$space-xs);
+  }
+
+  &__label {
+    font-size: 13px;
+  }
+
+  &__required {
+    color: v.$color-danger;
+  }
+
+  &__submit {
+    justify-self: start;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid v.$color-input-border;
+    border-radius: v.$radius-sm;
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  @include m.respond-to(v.$bp-tablet) {
+    &__fields {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__description {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include m.respond-to(v.$bp-desktop) {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+
+    &__description {
+      grid-column: auto;
+    }
+
+    &__submit {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+// ===== Footer =====
+.footer__title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer__slogan {
+  font-size: 12px;
+  color: v.$color-footer-muted;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-sm;
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: v.$space-sm v.$space-lg;
+  }
+}
+
+.footer__link {
+  font-size: 13px;
+  color: v.$color-white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__copyright {
+  font-size: 12px;
+  color: v.$color-footer-muted;
+}
