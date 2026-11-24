@@ -1,0 +1,16 @@
+{
+  "name": "acoustic-watch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss/main.scss:css/main.css",
+    "build": "sass --no-source-map scss/main.scss css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.107.0"
+  }
+}

@@ -1,0 +1,8 @@
+[
+  { "id": "1", "name": "Сенсор Центр", "district": "Галицький", "noiseLevel": 72, "status": "active" },
+  { "id": "2", "name": "Сенсор Сихів", "district": "Сихівський", "noiseLevel": 58, "status": "active" },
+  { "id": "3", "name": "Сенсор Левандівка", "district": "Залізничний", "noiseLevel": 76, "status": "inactive" },
+  { "id": "4", "name": "Сенсор Підзамче", "district": "Шевченківський", "noiseLevel": 69, "status": "active" },
+  { "id": "5", "name": "Сенсор Личаків", "district": "Личаківський", "noiseLevel": 81, "status": "active" },
+  { "id": "6", "name": "Сенсор Наукова", "district": "Франківський", "noiseLevel": 64, "status": "inactive" }
+]
