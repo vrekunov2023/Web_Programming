@@ -1,0 +1,136 @@
+/* Лабораторна №6 — відображення та фільтрація сенсорів */
+.active-sensors {
+  padding: 24px;
+  border: 1px solid #dae5e5;
+  border-radius: 10px;
+  background: #fff;
+}
+.active-sensors h2 {
+  margin-bottom: 4px;
+  padding: 0;
+  border: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  color: #0f1d38;
+}
+.active-sensors__description { margin-bottom: 24px; color: #586780; }
+.sensor-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 14px 30px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f6faf8;
+  border: 1px solid #d5e3df;
+  border-radius: 8px;
+}
+.sensor-filters__district {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #305448;
+  font-weight: bold;
+}
+.sensor-filters select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #c3d6d0;
+  border-radius: 6px;
+  background: #fff;
+  color: #141b26;
+  font-weight: normal;
+}
+.sensor-filters__critical {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0f1d38;
+  cursor: pointer;
+}
+.sensor-filters input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: #2b7a3b;
+  cursor: pointer;
+}
+.sensor-filters :focus-visible { outline: 3px solid #2b7a3b; outline-offset: 3px; }
+.sensor-filters__hint { grid-column: 1 / -1; color: #64748b; font-size: 14px; }
+.sensor-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.active-sensors .sensor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #dce4ed;
+  border-radius: 8px;
+  background: #fff;
+  color: #586780;
+}
+.active-sensors .sensor-card--normal { --status-color: #008c3b; --status-bg: #e8f7ef; --status-border: #cceedd; }
+.active-sensors .sensor-card--warning { --status-color: #b96a00; --status-bg: #fff5e1; --status-border: #ffe5b6; }
+.active-sensors .sensor-card--critical { --status-color: #d90f20; --status-bg: #ffeaed; --status-border: #ffd5da; }
+.active-sensors .sensor-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.active-sensors .sensor-card__id { color: #0f1d38; font-size: 26px; font-weight: bold; }
+.active-sensors .sensor-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border: 1px solid var(--status-border);
+  border-radius: 13px;
+  background: var(--status-bg);
+  color: var(--status-color);
+  font-size: 14px;
+  font-weight: bold;
+}
+.active-sensors .sensor-card__badge::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.active-sensors .sensor-card__district,
+.active-sensors .sensor-card__location,
+.active-sensors .sensor-card__level {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #586780;
+  font-size: 16px;
+  font-weight: normal;
+  overflow-wrap: anywhere;
+}
+.sensor-card__icon {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.active-sensors .sensor-card__level {
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e6ebf0;
+}
+.sensor-card__level strong { color: var(--status-color); font-size: 21px; }
+@media (max-width: 640px) {
+  .active-sensors { padding: 16px; }
+  .sensor-filters { grid-template-columns: 1fr; padding: 16px; }
+  .sensor-list { grid-template-columns: 1fr; }
+  .active-sensors .sensor-card { padding: 16px; }
+}
