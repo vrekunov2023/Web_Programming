@@ -1,0 +1,18 @@
+{
+  "name": "acoustic-watch-lab8",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Лабораторна робота 8 — дані з MockAPI на TypeScript",
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "watch": "tsc --watch",
+    "sass": "sass --watch scss/main.scss:css/main.css",
+    "build:css": "sass --no-source-map scss/main.scss css/main.css"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "sass": "^1.107.0"
+  }
+}
