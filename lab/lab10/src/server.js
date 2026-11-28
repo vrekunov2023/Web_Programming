@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Acoustic Watch API is running' });
+  res.json({ message: 'Acoustic Watch API is running — lab 10' });
 });
 
 app.get('/api/sensors', (req, res) => {
