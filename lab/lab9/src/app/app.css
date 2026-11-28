@@ -1,0 +1,61 @@
+:host { display: block; }
+.container { width: min(100% - 40px, 1040px); margin: 40px auto; }
+.page-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.brand-mark { width: 56px; height: 56px; padding: 11px; border-radius: 14px; color: #28783e; background: #e3f2e8; flex-shrink: 0; }
+.brand-mark svg { display: block; width: 100%; height: 100%; }
+h1 { font-size: clamp(26px, 4vw, 36px); line-height: 1.2; margin: 0 0 5px; }
+.subtitle { color: #5c6b7d; margin: 0; }
+h2 { font-size: 21px; margin: 0; }
+.sensor-form { padding: 24px; margin-bottom: 30px; border: 1px solid #cddfd5; border-radius: 12px; background: #fff; }
+.sensor-form h2 { margin-bottom: 18px; }
+.form-fields { display: grid; grid-template-columns: 1.4fr 1.2fr 1fr; gap: 16px; }
+label { display: grid; gap: 7px; font-size: 14px; font-weight: 600; color: #314f44; }
+input { width: 100%; min-width: 0; padding: 11px 12px; border: 1px solid #bccfc5; border-radius: 6px; color: #12223b; background: #fff; font-weight: 400; }
+input::placeholder { color: #7a8693; }
+input:focus-visible, button:focus-visible { outline: 3px solid #75ac88; outline-offset: 3px; }
+.form-bottom { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
+button { cursor: pointer; border: 1px solid transparent; border-radius: 6px; padding: 10px 14px; font-weight: 600; transition: background-color .15s; }
+.add-button { color: #fff; background: #28783e; }
+.add-button:hover { background: #1f6031; }
+.form-hint { color: #64748b; font-size: 13px; margin: 0; }
+.error-message { color: #b42318; margin: 14px 0 0; font-size: 14px; }
+.list-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.counter { margin: 0; font-size: 14px; color: #5c6b7d; }
+.counter span { margin: 0 7px; }
+.counter strong { color: #213e30; }
+.feedback { margin: 8px 0 16px; min-height: 22px; color: #28783e; font-size: 14px; }
+.sensor-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.sensor-card { min-width: 0; padding: 22px; border: 1px solid #d5dfeb; border-radius: 10px; background: #fff; }
+.sensor-card.inactive { background: #eef1f4; border-color: #cbd3dd; }
+.inactive .district, .inactive .sensor-id { color: #657181; }
+.inactive h3 { color: #596574; }
+.card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+h3 { margin: 0; font-size: 20px; overflow-wrap: anywhere; }
+.badge { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; background: #e6f5ed; color: #08793c; border: 1px solid #bce7cf; border-radius: 10px; padding: 3px 8px; font-size: 12px; }
+.badge-inactive { background: #e4e9ef; color: #536174; border-color: #c8d1dc; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.district { margin: 14px 0 4px; color: #53657b; overflow-wrap: anywhere; }
+.sensor-id { margin: 0; font-size: 13px; color: #64748b; }
+.noise-level { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; color: #53657b; border-top: 1px solid #e2e8f0; padding-top: 14px; margin: 16px 0; }
+.noise-level strong { color: #07873c; font-size: 21px; }
+.noise-level strong.warning { color: #ab6500; }
+.noise-level strong.critical { color: #cb2634; }
+.actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.status-button { background: #eaf2ed; border-color: #c5dbcc; color: #225c34; }
+.status-button:hover { background: #dcebe1; }
+.delete-button { background: #fff2f1; color: #b42318; border-color: #f0ccc8; }
+.delete-button:hover { background: #fce2df; }
+.empty-state { grid-column: 1 / -1; padding: 36px 20px; text-align: center; border: 1px dashed #b8c7c0; border-radius: 10px; background: #fff; }
+.empty-state p { color: #5c6b7d; margin-bottom: 0; }
+footer { margin-top: 28px; text-align: center; color: #64748b; font-size: 13px; }
+@media (max-width: 760px) {
+  .form-fields { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .container { width: min(100% - 24px, 1040px); margin: 24px auto; }
+  .page-heading { gap: 12px; }
+  .brand-mark { width: 44px; height: 44px; padding: 8px; }
+  .subtitle { font-size: 14px; }
+  .sensor-list { grid-template-columns: 1fr; }
+  .sensor-form, .sensor-card { padding: 18px; }
+}

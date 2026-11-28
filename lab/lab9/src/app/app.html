@@ -1,0 +1,82 @@
+<main class="container">
+  <header class="page-heading">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M5 13v6M10 9v14M16 4v24M22 9v14M27 13v6" />
+      </svg>
+    </div>
+    <div>
+      <h1>Акустична варта</h1>
+      <p class="subtitle">Керування датчиками міського шуму</p>
+    </div>
+  </header>
+
+  <section class="sensor-form" aria-labelledby="add-heading">
+    <h2 id="add-heading">Додати датчик</h2>
+    <form (ngSubmit)="addSensor()" novalidate>
+      <div class="form-fields">
+        <label for="sensor-name">Назва датчика
+          <input id="sensor-name" name="sensorName" type="text"
+            placeholder="Наприклад, Сенсор Підзамче"
+            [(ngModel)]="newName" required>
+        </label>
+        <label for="sensor-district">Район
+          <input id="sensor-district" name="sensorDistrict" type="text"
+            placeholder="Наприклад, Шевченківський"
+            [(ngModel)]="newDistrict" required>
+        </label>
+        <label for="sensor-noise">Рівень шуму, дБ
+          <input id="sensor-noise" name="sensorNoise" type="number" min="0" step="any"
+            placeholder="Наприклад, 65"
+            [(ngModel)]="newNoiseLevel" required>
+        </label>
+      </div>
+      <div class="form-bottom">
+        <button type="submit" class="add-button">+ Додати датчик</button>
+        <p class="form-hint">Новий датчик матиме статус active.</p>
+      </div>
+      @if (errorMessage) {
+        <p class="error-message" role="alert">{{ errorMessage }}</p>
+      }
+    </form>
+  </section>
+
+  <section aria-labelledby="list-heading">
+    <div class="list-heading">
+      <h2 id="list-heading">Список датчиків</h2>
+      <p class="counter">Усього: <strong>{{ sensors.length }}</strong>
+        <span aria-hidden="true">·</span> Активних: <strong>{{ activeCount }}</strong></p>
+    </div>
+    <p class="feedback" role="status" aria-live="polite">{{ feedback }}</p>
+    <div class="sensor-list">
+      @for (sensor of sensors; track sensor.id) {
+        <article class="sensor-card" [class.inactive]="sensor.status === 'inactive'">
+          <div class="card-heading">
+            <h3>{{ sensor.name }}</h3>
+            <span class="badge" [class.badge-inactive]="sensor.status === 'inactive'">
+              <span class="status-dot" aria-hidden="true"></span>{{ sensor.status }}
+            </span>
+          </div>
+          <p class="district">Район: {{ sensor.district }}</p>
+          <p class="sensor-id">ID: {{ sensor.id }}</p>
+          <p class="noise-level">Рівень шуму:
+            <strong [class.warning]="sensor.noiseLevel > 55 && sensor.noiseLevel <= 70"
+              [class.critical]="sensor.noiseLevel > 70">{{ sensor.noiseLevel }} дБ</strong>
+          </p>
+          <div class="actions">
+            <button type="button" class="status-button" (click)="toggleStatus(sensor.id)"
+              [attr.aria-label]="'Змінити статус датчика ' + sensor.name">Змінити статус</button>
+            <button type="button" class="delete-button" (click)="deleteSensor(sensor.id)"
+              [attr.aria-label]="'Видалити датчик ' + sensor.name">Видалити</button>
+          </div>
+        </article>
+      } @empty {
+        <div class="empty-state">
+          <h3>Датчиків поки немає</h3>
+          <p>Додайте перший датчик за допомогою форми вище.</p>
+        </div>
+      }
+    </div>
+  </section>
+  <footer>Зміни зберігаються до перезавантаження сторінки.</footer>
+</main>

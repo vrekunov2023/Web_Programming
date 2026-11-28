@@ -1,0 +1,6 @@
+node_modules/
+.angular/
+out-tsc/
+coverage/
+*.log
+# dist включаємо в Git для наявного сайту звітів на GitHub Pages.
